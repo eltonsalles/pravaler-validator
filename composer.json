@@ -1,0 +1,38 @@
+{
+    "name": "pravaler/validator",
+    "type": "library",
+    "description": "Validation using the symfony components, but in the laravel style",
+    "keywords": [],
+    "homepage": "https://github.com/eltonsalles/pravaler-validator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Elton Rodrigues",
+            "email": "eltonrms.leite@hotmail.com"
+        },
+        {
+            "name": "Luiz Valentim",
+            "email": "lhvalentim@outlook.com"
+        },
+        {
+            "name": "Fernando Tacks",
+            "email": "fernandotakacs@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "symfony/validator": "~4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pravaler\\Component\\Validator\\": "Pravaler"
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev"
+}
