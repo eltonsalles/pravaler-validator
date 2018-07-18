@@ -69,6 +69,7 @@ Possible Validations
 * [PasswordConfirm](#password-confirm)
 * [Required](#required)
 * [Size](#size)
+* [Regex](#regex)
 
 ## Cpf
 ```php
@@ -125,6 +126,13 @@ $validator = new Validator([
 ```php
 $validator = new Validator([
     'field' => 'size:1:500',
+]);
+```
+
+## regex
+```php
+$validator = new Validator([
+    'field' => 'regex:/[1-9]{2}\9\d{8}/',
 ]);
 ```
 
