@@ -5,7 +5,6 @@ namespace Pravaler\Component\Validator\Tests\Pravaler;
 use PHPUnit\Framework\TestCase;
 use Pravaler\Component\Validator\Validator;
 
-
 class ValidatorTest extends TestCase
 {
     public function testInvalidCpf()
@@ -196,6 +195,9 @@ class ValidatorTest extends TestCase
         $this->assertTrue($result);
     }
 
+    /**
+     * Size
+     */
     public function testInvalidSize()
     {
         $data = ['size' => 'field'];
@@ -215,6 +217,35 @@ class ValidatorTest extends TestCase
 
         $validator = new Validator([
             'size' => 'size:1:10'
+        ]);
+        $validator->validate($data);
+        $result = $validator->isValid();
+
+        $this->assertTrue($result);
+    }
+
+    /**
+     * Regex
+     */
+    public function testInvalidRegex()
+    {
+        $data = ['regex' => '00998100690'];
+
+        $validator = new Validator([
+            'regex' => 'regex:/[1-9]{2}\9\d{8}/'
+        ]);
+        $validator->validate($data);
+        $result = $validator->isValid();
+
+        $this->assertFalse($result);
+    }
+
+    public function testValidRegex()
+    {
+        $data = ['regex' => '11998101234'];
+
+        $validator = new Validator([
+            'regex' => 'regex:/[1-9]{2}\9\d{8}/'
         ]);
         $validator->validate($data);
         $result = $validator->isValid();
