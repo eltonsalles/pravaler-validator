@@ -24,7 +24,8 @@ class Size extends AbstractHandler
                 'min' => $params[1],
                 'max' => $params[2],
                 'minMessage' => 'O valor é menor do que o permitido: ' . $params[1],
-                'maxMessage' => 'O valor é maior do que o permitido: ' . $params[2]
+                'maxMessage' => 'O valor é maior do que o permitido: ' . $params[2],
+                'exactMessage' => 'O valor deve ter exatamente ' . $params[1] . ' caracteres.'
             ]);
 
             $this->returnConstraint = $size;
