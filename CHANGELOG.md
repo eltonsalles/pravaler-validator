@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+1.1.1
+-----
+
+    * Fixed CpfValidator to stop validation when encountering an error
+
 1.1.0
 -----
 

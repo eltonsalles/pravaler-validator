@@ -27,12 +27,14 @@ class CpfValidator extends ConstraintValidator
             $this->context->buildViolation($message)
                 ->setParameter('{{ string }}', $value)
                 ->addViolation();
+            return;
         }
 
         if (preg_match('/(\d)\1{10}/', $cpf)) {
             $this->context->buildViolation($message)
                 ->setParameter('{{ string }}', $value)
                 ->addViolation();
+            return;
         }
 
         for ($t = 9; $t < 11; $t++) {
@@ -45,6 +47,7 @@ class CpfValidator extends ConstraintValidator
                 $this->context->buildViolation($message)
                     ->setParameter('{{ string }}', $value)
                     ->addViolation();
+                return;
             }
         }
     }
