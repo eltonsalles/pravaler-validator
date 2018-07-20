@@ -3,7 +3,7 @@
 namespace Pravaler\Component\Validator\Validations;
 
 use Symfony\Component\Validator\Constraint;
-use Symfony\Component\Validator\Constraints\Regex;
+use Symfony\Component\Validator\Constraints\Type;
 
 class Numeric extends AbstractHandler
 {
@@ -18,8 +18,8 @@ class Numeric extends AbstractHandler
         $this->nameHandle = 'numeric';
 
         if ($this->nameHandle === strtolower($rule)) {
-            $numeric = new Regex([
-                'pattern' => '/^\d+/',
+            $numeric = new Type([
+                'type' => 'numeric',
                 'message' => 'O valor não é numérico.'
             ]);
 
